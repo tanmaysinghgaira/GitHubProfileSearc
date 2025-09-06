@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Search - Professional Developer Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+    <div class="bg-gradient"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fab fa-github"></i>
+                <h1>GitHub Profile Search</h1>
+            </div>
+            <p class="tagline">Discover amazing developers and their contributions</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="usernameInput" 
+                            placeholder="Enter GitHub username..."
+                            autocomplete="off"
+                        >
+                        <button id="searchBtn" class="search-btn">
+                            <span class="btn-text">Search</span>
+                            <i class="fas fa-arrow-right btn-icon"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions">
+                        <span class="suggestion-label">Try:</span>
+                        <button class="suggestion-btn" data-username="torvalds">torvalds</button>
+                        <button class="suggestion-btn" data-username="gaearon">gaearon</button>
+                        <button class="suggestion-btn" data-username="sindresorhus">sindresorhus</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Searching GitHub...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorText"></p>
+            </div>
+
+            <!-- Profile Results -->
+            <section id="profileSection" class="profile-section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img id="profileImage" src="" alt="Profile Picture">
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName"></h2>
+                            <p id="profileUsername" class="username"></p>
+                            <p id="profileBio" class="bio"></p>
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span id="followersCount"></span>
+                                    <label>Followers</label>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span id="followingCount"></span>
+                                    <label>Following</label>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-code-branch"></i>
+                                    <span id="reposCount"></span>
+                                    <label>Repositories</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="profileLocation"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-link"></i>
+                            <a id="profileWebsite" href="" target="_blank"></a>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="profileJoinDate"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-building"></i>
+                            <span id="profileCompany"></span>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <a id="githubLink" href="" target="_blank" class="action-btn primary">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                        <button id="viewReposBtn" class="action-btn secondary">
+                            <i class="fas fa-folder-open"></i>
+                            View Repositories
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Repositories Section -->
+                <div id="reposSection" class="repos-section">
+                    <h3>Recent Repositories</h3>
+                    <div id="reposList" class="repos-grid"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 GitHub Profile Search. Built with ❤️ for developers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
